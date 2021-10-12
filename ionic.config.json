@@ -1,0 +1,8 @@
+{
+  "name": "colegio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "526b6e2a"
+}
