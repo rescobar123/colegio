@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Calificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Actividad tal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <div id="container">
+    
+      <ion-card  *ngFor="let curso of cursos" >
+        <ion-item style="cursor: pointer; " type="button" (click) = "openModal(curso.title)"  >
+          <ion-icon style="color: rgb(94, 218, 240);" size="large" name="checkmark-done-circle-outline"></ion-icon>
+       
+        <ion-card-header>
+          <ion-card-title>{{ curso.title }}</ion-card-title>
+        </ion-card-header>
+  
+        <ion-card-content>
+          
+        </ion-card-content>
+        </ion-item>
+        
+      </ion-card>
+   
+    
+
+  </div>
+  
+
+</ion-content>

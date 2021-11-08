@@ -1,0 +1,176 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Notas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-card >
+      <br>
+      <ion-icon style="color: rgb(0, 62, 128)" size="large"name="clipboard-outline"></ion-icon>
+      <ion-card-header>
+        <ion-card-title>Primer Bimestre</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <table style="border-collapse: collapse;" class="table table-bordered">
+          <thead id="headtable">
+            <tr>
+              <th style="width: 20%;" scope="col">Curso</th>
+              <th style="width: 20%;" scope="col">Escritura</th>
+              <th style="width: 20%;" scope="col">Lectura</th>
+              <th style="width: 20%;" scope="col">Asistencia</th>
+              <th style="width: 20%;" scope="col">Examen Final</th>
+              <th style="width: 15%;" scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let nota of notas">
+              <th style="width: 20%;" scope="row"> {{ nota.curso }}</th>
+              <td style="width: 20%;"> {{ nota.escritura }}</td>
+              <td style="width: 20%;">{{ nota.lectura }}</td>
+              <td style="width: 20%;">{{ nota.asistencia }}</td>
+              <td style="width: 20%;">{{ nota.examen }}</td>
+              <td style="width: 15%;">{{ nota.examen }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card >
+      <br>
+      <ion-icon style="color: rgb(0, 62, 128)" size="large"name="clipboard-outline"></ion-icon>
+      <ion-card-header>
+        <ion-card-title>Segundo Bimestre</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <table style="border-collapse: collapse;" class="table table-bordered">
+        
+            <tr>
+              <th style="width: 20%;" scope="col">CURSO</th>
+              <th style="width: 15%;" scope="col">ESCRITA</th>
+              <th style="width: 15%;" scope="col">LECTURA</th>
+              <th style="width: 15%;" scope="col">ASISTENCIA</th>
+              <th style="width: 15%;" scope="col">PRUEBA FINAL</th>
+              <th style="width: 15%;" scope="col">TOTAL</th>
+            </tr>
+
+           
+            <tr *ngFor="let nota of notas">
+              <th style="width: 20%;" scope="row"> {{ nota.curso }}</th>
+              <td style="width: 15%;"> {{ nota.escritura }}</td>
+              <td style="width: 15%;">{{ nota.lectura }}</td>
+              <td style="width: 15%;">{{ nota.asistencia }}</td>
+              <td style="width: 15%;">{{ nota.examen }}</td>
+              <td style="width: 15%;">{{ nota.examen }}</td>
+            </tr>
+
+        </table>
+      </ion-card-content>
+    </ion-card>
+    <ion-card >
+      <br>
+      <ion-icon style="color: rgb(0, 62, 128)" size="large"name="clipboard-outline"></ion-icon>
+      <ion-card-header>
+        <ion-card-title>Tercer Bimestre</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <table style="border-collapse: collapse;" class="table table-bordered">
+          <thead>
+            <tr>
+              <th style="width: 20%;" scope="col">Curso</th>
+              <th style="width: 20%;" scope="col">Escritura</th>
+              <th style="width: 20%;" scope="col">Lectura</th>
+              <th style="width: 20%;" scope="col">Asistencia</th>
+              <th style="width: 20%;" scope="col">Examen Final</th>
+              <th style="width: 15%;" scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let nota of notas">
+              <th style="width: 20%;" scope="row"> {{ nota.curso }}</th>
+              <td style="width: 20%;"> {{ nota.escritura }}</td>
+              <td style="width: 20%;">{{ nota.lectura }}</td>
+              <td style="width: 20%;">{{ nota.asistencia }}</td>
+              <td style="width: 20%;">{{ nota.examen }}</td>
+              <td style="width: 15%;">{{ nota.examen }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-card-content>
+    </ion-card>
+    <ion-card >
+      <br>
+      <ion-icon style="color: rgb(0, 62, 128)" size="large"name="clipboard-outline"></ion-icon>
+      <ion-card-header>
+        <ion-card-title>Cuarto Bimestre</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <table style="border-collapse: collapse;" class="table table-bordered">
+          <thead>
+            <tr>
+              <th style="width: 20%;" scope="col">Curso</th>
+              <th style="width: 20%;" scope="col">Escritura</th>
+              <th style="width: 20%;" scope="col">Lectura</th>
+              <th style="width: 20%;" scope="col">Asistencia</th>
+              <th style="width: 20%;" scope="col">Examen Final</th>
+              <th style="width: 10%;" scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let nota of notas">
+              <th style="width: 20%;" scope="row"> {{ nota.curso }}</th>
+              <td style="width: 20%;"> {{ nota.escritura }}</td>
+              <td style="width: 20%;">{{ nota.lectura }}</td>
+              <td style="width: 20%;">{{ nota.asistencia }}</td>
+              <td style="width: 20%;">{{ nota.examen }}</td>
+              <td style="width: 15%;">{{ nota.examen }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-card-content>
+    </ion-card>
+    <ion-card >
+      <br>
+      <ion-icon style="color: rgb(0, 62, 128)" size="large"name="clipboard-outline"></ion-icon>
+      <ion-card-header>
+        <ion-card-title>General</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <table style="border-collapse: collapse;" class="table table-bordered">
+          <thead>
+            <tr>
+              <th style="width: 20%;" scope="col">Curso</th>
+              <th style="width: 20%;" scope="col">Escritura</th>
+              <th style="width: 20%;" scope="col">Lectura</th>
+              <th style="width: 20%;" scope="col">Asistencia</th>
+              <th style="width: 20%;" scope="col">Examen Final</th>
+              <th style="width: 10%;" scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let nota of notas">
+              <th style="width: 20%;" scope="row"> {{ nota.curso }}</th>
+              <td style="width: 20%;"> {{ nota.escritura }}</td>
+              <td style="width: 20%;">{{ nota.lectura }}</td>
+              <td style="width: 20%;">{{ nota.asistencia }}</td>
+              <td style="width: 20%;">{{ nota.examen }}</td>
+              <td style="width: 15%;">{{ nota.examen }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  
+
+</ion-content>

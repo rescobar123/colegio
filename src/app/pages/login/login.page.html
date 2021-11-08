@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>LOGIN</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+    <ion-card>
+    <form >
+      <img style="width: 15%;"  src="https://w7.pngwing.com/pngs/373/290/png-transparent-logo-lion-o-thundercats-animated-series-logos-miscellaneous-comics-logo-thumbnail.png">
+      <br><br>
+      <ion-item lines="full">
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input type="text" required></ion-input>
+      </ion-item>
+  
+      <ion-item lines="full">
+        <ion-label position="floating">Contrasenia</ion-label>
+        <ion-input type="password" required></ion-input>
+      </ion-item>
+      <br><br>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary">Iniciar Sesion</ion-button>
+          <br><br>
+          <br>         
+           <a [routerLink]="['/forgot-password']" class="small-text">Olvidaste tu contrasenia?</a>
+        </ion-col>
+      </ion-row>
+    </form>
+    </ion-card>
+  </div>
+  
+</ion-content>

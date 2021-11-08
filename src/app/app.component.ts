@@ -1,18 +1,54 @@
 import { Component } from '@angular/core';
+
+import { Router,ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
-  ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+
+
+  public appPages;
+  public labels;
+  public idRol;
+  constructor(private activeRouter:ActivatedRoute) {}
+
+  ngOnInit(): void {
+    
+    this.idRol = 2;
+     if(this.idRol == 1){
+       //Obtener los cursos del alumno y meterlo aca.
+        this.appPages =  [
+          { title: 'Ciencias Naturales', url: '/actividades/Ciencias Naturales', icon: 'home' },
+          { title: 'Idioma Espaniol', url: '/actividades/Idioma Espaniol', icon: 'paper-plane' },
+          { title: 'Ingles', url: '/actividades/Ingles', icon: 'heart' },
+        ];
+
+        this.labels = [
+          { title: 'Calificaciones', url: '/calificaciones', icon: 'home' },
+          { title: 'Notas', url: '/notas', icon: 'heart' },
+        ];
+
+     }else if(this.idRol == 2){
+       //Obtener los grados del maestro y meterlos aca
+        this.appPages =  [
+          { title: '1ero. Primaria', url: 'maestro/grados/1ero. Primaria', icon: 'people' },
+          { title: '2do. Primaria', url: 'maestro/grados/2do. Primaria', icon: 'people' },
+          { title: '3ero. Primaria', url: 'maestro/grados/3ero. Primaria', icon: 'people' },
+          { title: '4to. Primaria', url: 'maestro/grados/4to. Primaria', icon: 'people' },
+        ];
+
+        this.labels = [
+          { title: 'Calificaciones', url: '/calificaciones', icon: 'home' },
+          { title: 'Notas', url: '/notas', icon: 'heart' },
+        ];
+     }else{
+      this.appPages =  [
+        { title: 'Home', url: 'home', icon: 'home' },
+
+      ];
+     }
+  }
+
 }
