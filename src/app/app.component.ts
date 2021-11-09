@@ -16,7 +16,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     
-    this.idRol = 1;
+    this.idRol = 2;
      if(this.idRol == 1){
        //Obtener los cursos del alumno y meterlo aca.
         this.appPages =  [
