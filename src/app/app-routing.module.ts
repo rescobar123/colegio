@@ -49,6 +49,15 @@ const routes: Routes = [
     path: 'maestro/notas',
     loadChildren: () => import('./pages/maestro/notas/notas.module').then( m => m.NotasPageModule)
   },
+  {
+    path: 'administrativo/alumnos',
+    loadChildren: () => import('./pages/administrativo/alumnos/alumnos.module').then( m => m.AlumnosPageModule)
+  },
+  {
+    path: 'administrativo/maestros',
+    loadChildren: () => import('./pages/administrativo/maestros/maestros.module').then( m => m.MaestrosPageModule)
+  },
+
 
 
 ];

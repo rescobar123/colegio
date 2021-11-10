@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Alumnos </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Inscripciones</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <div id="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-sm>
+          <ion-card>
+           
+            <ion-card-header>
+              <ion-card-subtitle>Alumnos</ion-card-subtitle>
+              <ion-card-title>Colegio Parroquial Nuestra Seniora del Carmen</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <hr class="dotted">
+              <table datatable  class="table row-border table-hover ">
+                <thead>
+                  <tr>
+                    <th scope="col"> ID</th>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col">Observacion</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let alumno of allAlumnos" >
+                    <th scope="row">{{ alumno.idAlumno }}</th>
+                    <td>{{ alumno.nombres }}</td>
+                    <td>{{ alumno.apellidos }}</td>
+                    <td>{{ alumno.codigoAlumno }}</td>
+                    <td>{{ alumno.direccion }}</td>
+                    <td>{{ alumno.celular }}</td>
+                    <td>{{ alumno.observacion }}</td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+
+    
+
+  </div>
+  
+
+</ion-content>

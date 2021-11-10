@@ -11,7 +11,7 @@ import { AlumnoI } from '../../models/Alumno.Interface';
 })
 export class AlumnoService {
 
-  private url:string = "http://desktop-5rs54an:8080/Servicio/webresources/Alumno/";
+  private url:string = "http://desktop-5rs54an:8080/backendColegio/webresources/Alumno/";
 constructor(private http:HttpClient){}
 
  getAllAlumnos():Observable<AlumnoI[]>{
