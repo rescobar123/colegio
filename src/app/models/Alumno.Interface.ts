@@ -11,4 +11,4 @@ export interface AlumnoI{
     estado:number,
     observacion: string,
     fechaCreacion: string
-}
+}  
