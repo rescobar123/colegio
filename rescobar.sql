@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 10-11-2021 a las 03:19:07
+-- Tiempo de generación: 18-11-2021 a las 01:50:43
 -- Versión del servidor: 10.4.10-MariaDB
 -- Versión de PHP: 5.6.40
 
@@ -63,6 +63,8 @@ CREATE TABLE IF NOT EXISTS `alumno` (
   `estado` int(1) NOT NULL,
   `observacion` varchar(50) NOT NULL,
   `fechaCreacion` date NOT NULL,
+  `fotografia` longtext NOT NULL,
+  `fechaNacimiento` date NOT NULL,
   PRIMARY KEY (`idAlumno`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
