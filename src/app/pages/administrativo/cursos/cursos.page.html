@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+  
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div id="container">
+      <ion-card>
+        <ion-card-header>
+          <ion-icon size="large" name="person-add"></ion-icon>
+          <ion-card-title>Cursos</ion-card-title>
+        </ion-card-header>
+  
+        <ion-card-content>
+          <form>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12" size-md>
+                  <ion-item>
+                    <ion-label position="stacked">Nombres</ion-label>
+                    <ion-input type="text" ></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-md>
+                  <ion-item>
+                    <ion-label position="stacked">Apellidos</ion-label>
+                    <ion-input type="text" ></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              
+              <ion-row>
+                <ion-col size="12" size-md>
+                  <ion-item>
+                    <ion-label position="stacked">Celular</ion-label>
+                    <ion-input type="number" ></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-md>
+                  <ion-item>
+                    <ion-label position="stacked">Dirección</ion-label>
+                    <ion-input type="text" ></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              
+              <ion-row>
+                <ion-col size="12" size-md>
+                  <ion-item>
+                    <ion-label position="stacked">Observación</ion-label>
+                    <ion-input type="text" ></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-md>
+                  <ion-item>
+                    <ion-label color="tertiary" position="stacked">Fecha de Nacimiento</ion-label>
+                    <ion-input type="date"></ion-input>
+                  </ion-item>
+                </ion-col>  
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-button expand="full" (click)="f.click()">
+                      <ion-icon lazy="true" slot="start" name="attach"></ion-icon>
+                      <ion-label slot="end">Adjuntar documento auxiliar...</ion-label>
+                    </ion-button>
+                      <input class="ion-hide" #f type="file"
+                        accept="image/png, image/jpeg">
+        
+                 </ion-item>
+                </ion-col>
+                
+              </ion-row>
+            </ion-grid>
+          </form>
+        </ion-card-content>
+        <ion-button>Guardar</ion-button><br>
+      </ion-card>
+    </div>
+  </ion-content>

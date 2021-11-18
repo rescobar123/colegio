@@ -16,7 +16,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     
-    this.idRol = 2;
+    this.idRol = 3;
      if(this.idRol == 1){
        //Obtener los cursos del alumno y meterlo aca.
         this.appPages =  [
@@ -43,7 +43,18 @@ export class AppComponent {
           { title: 'Calificaciones', url: '/calificaciones', icon: 'home' },
           { title: 'Notas', url: '/notas', icon: 'heart' },
         ];
-     }else{
+     }else if(this.idRol == 3){
+      //Obtener los grados del administrativo y meterlos aca
+       this.appPages =  [
+         { title: 'Alumnos', url: 'administrativo/alumnos', icon: 'people' },
+         { title: 'Recursos', url: 'administrativo/recursos', icon: 'layers' },
+       ];
+
+       this.labels = [
+         { title: 'Calificaciones', url: '/calificaciones', icon: 'home' },
+         { title: 'Notas', url: '/notas', icon: 'heart' },
+       ];
+    }else{
       this.appPages =  [
         { title: 'Home', url: 'home', icon: 'home' },
 

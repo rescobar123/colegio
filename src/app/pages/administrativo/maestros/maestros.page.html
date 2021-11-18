@@ -1,9 +1,53 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>maestros</ion-title>
+  
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
-</ion-content>
+  <ion-content [fullscreen]="true">
+    <div id="container">
+      <ion-card>
+        <ion-card-header>
+          <ion-icon size="large" name="person-add"></ion-icon>
+          <ion-card-title>Maestros</ion-card-title>
+        </ion-card-header>
+  
+        <ion-card-content>
+          <form>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12" size-md>
+                  <ion-item>
+                    <ion-label position="stacked">Nombre Completo</ion-label>
+                    <ion-input type="text" ></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-md>
+                  <ion-item>
+                    <ion-label position="stacked">Dirección</ion-label>
+                    <ion-input type="text" ></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              
+              <ion-row>
+                <ion-col size="12" size-md>
+                  <ion-item>
+                    <ion-label position="stacked">Celular</ion-label>
+                    <ion-input type="number" ></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-md>
+                  <ion-item>
+                    <ion-label position="stacked">Escolaridad</ion-label>
+                    <ion-input type="text" ></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </form>
+        </ion-card-content>
+        <ion-button>Guardar</ion-button><br>
+      </ion-card>
+    </div>
+  </ion-content>

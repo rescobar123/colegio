@@ -6,7 +6,18 @@ import { AlumnosPage } from './alumnos.page';
 const routes: Routes = [
   {
     path: '',
-    component: AlumnosPage
+    component: AlumnosPage,
+    children: [
+      {
+        path: 'nuevo-alumno',
+        loadChildren: () => import('../nuevo-alumno/nuevo-alumno.module').then(m => m.NuevoAlumnoPageModule)
+      },
+      {
+        path: 'alumno-editar',
+        loadChildren: () => import('../alumno-editar/alumno-editar-routing.module').then(m => m.AlumnoEditarPageRoutingModule)
+      },
+      
+    ]
   }
 ];
 

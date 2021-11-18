@@ -3,14 +3,14 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Alumnos </ion-title>
+    <ion-title>Recursos </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" overflow-scroll="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Inscripciones</ion-title>
+      <ion-title size="large">Recursos</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -22,8 +22,8 @@
           <ion-card>
            
             <ion-card-header>
-              <ion-card-subtitle>Alumnos</ion-card-subtitle>
-              <ion-card-title>Colegio Parroquial Nuestra Seniora del Carmen</ion-card-title>
+              <ion-card-subtitle></ion-card-subtitle>
+              <ion-card-title>Recursos</ion-card-title>
             </ion-card-header>
             <ion-card-content>
               <hr class="dotted">
@@ -41,16 +41,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let alumno of allAlumnos" >
-                    <th scope="row">{{ alumno.idAlumno }}</th>
-                    <td>{{ alumno.nombres }}</td>
-                    <td>{{ alumno.apellidos }}</td>
-                    <td>{{ alumno.codigoAlumno }}</td>
-                    <td>{{ alumno.direccion }}</td>
-                    <td>{{ alumno.celular }}</td>
-                    <td>{{ alumno.observacion }}</td>
-                    <td> <ion-icon name="create"></ion-icon></td>
-                  </tr>
+                  
                  
                 </tbody>
               </table>
@@ -67,18 +58,21 @@
 
   <ion-tabs>
     <ion-tab-bar slot="bottom">
-      
+      <ion-tab-button tab="maestros">
+        <ion-icon name="person-circle"></ion-icon>
+        <ion-label>Maestros</ion-label>
+      </ion-tab-button>
       <ion-tab-button tab="">
-        <ion-icon name="school"></ion-icon>
-        <ion-label>Inscribir</ion-label>
-      </ion-tab-button>
-      <ion-tab-button  tab="nuevo-alumno">
         <ion-icon name="person-add"></ion-icon>
-        <ion-label>Nuevo Alumno</ion-label>
+        <ion-label>Asignar Maestro</ion-label>
+      </ion-tab-button>             
+      <ion-tab-button  tab="grados">
+        <ion-icon name="library"></ion-icon>
+        <ion-label>Grados</ion-label>
       </ion-tab-button>
-      <ion-tab-button tab="alumnos">
-        <ion-icon name="people"></ion-icon>
-        <ion-label>Alumnos</ion-label>
+      <ion-tab-button tab="cursos">
+        <ion-icon name="clipboard"></ion-icon>
+        <ion-label>Cursos</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>
