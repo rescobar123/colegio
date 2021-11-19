@@ -19,6 +19,12 @@ constructor(private http:HttpClient){}
   return this.http.get<AlumnoI[]>(direccion);
  }
 
+ postAlumno(form:AlumnoI):Observable<AlumnoI>{
+  let direccion = this.url + "insertar";
+  console.log(direccion);
+  return this.http.put<AlumnoI>(direccion, form);
+ }
+
  //Crud Alumno
  getSiglePacient(id: number):Observable<AlumnoI>{
     let direccion = this.url + id;
@@ -33,11 +39,7 @@ constructor(private http:HttpClient){}
    let direccion = this.url + "delete";
    return this.http.put<VehiculoI>(direccion, form);
  }
- postVehiculo(form:VehiculoI):Observable<VehiculoI>{
-  let direccion = this.url + "insertar";
-  console.log(direccion);
-  return this.http.put<VehiculoI>(direccion, form);
- }
+ 
 
 ///End crud vehiculo
 

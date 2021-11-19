@@ -24,6 +24,7 @@
     "@capacitor/haptics": "1.1.0",
     "@capacitor/keyboard": "1.1.0",
     "@capacitor/status-bar": "1.0.3",
+    "@ionic-native/toast": "^5.36.0",
     "@ionic/angular": "^5.5.2",
     "@ionic/cli": "^6.18.0",
     "angular": "^1.8.2",
@@ -31,7 +32,9 @@
     "ckeditor5-build-classic": "^1.0.0",
     "ionic": "^5.4.16",
     "ionic-rich-text": "^0.2.7",
+    "ngx-toastr": "^14.2.0",
     "rxjs": "~6.6.0",
+    "toast": "^0.3.47",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
   },
