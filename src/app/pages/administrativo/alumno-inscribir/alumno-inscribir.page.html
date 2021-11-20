@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+  
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div id="container">
+      <ion-card>
+        <ion-card-header>
+          <ion-icon size="large" name="school"></ion-icon>
+          <ion-card-title>Inscripcion</ion-card-title>
+        </ion-card-header>
+  
+        <ion-card-content>
+          <form [formGroup]=inscripcionForm (ngSubmit)="postInscripcion(inscripcionForm.value)">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12" size-md>
+                  <ion-item>
+                    <ion-label position="stacked">Alumno</ion-label>
+                    <ion-input type="text" name="idAlumno" class="form-control" formControlName="idAlumno" ></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-md>
+                  <ion-item>
+                    <ion-label position="stacked">Grado</ion-label>
+                    <ion-input type="text" name="idGrado" class="form-control" formControlName="idGrado" ></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              
+              <ion-row>
+                <ion-col size="12" size-md>
+                  <ion-item>
+                    <ion-label position="stacked">FechaInscripcion</ion-label>
+                    <ion-input type="date" name="fechaInscripcion" class="form-control" formControlName="fechaInscripcion" ></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-md>
+                  <ion-item>
+                    <ion-label position="stacked">Anio Escolar</ion-label>
+                    <ion-input type="number" name="anioEscolar" class="form-control" formControlName="anioEscolar" ></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-button type="submit">Inscribir</ion-button><br>
+          </form>
+         
+        </ion-card-content>
+        
+      </ion-card>
+    </div>
+  </ion-content>

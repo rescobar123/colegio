@@ -27,6 +27,7 @@
     "@ionic-native/toast": "^5.36.0",
     "@ionic/angular": "^5.5.2",
     "@ionic/cli": "^6.18.0",
+    "@swimlane/ngx-datatable": "^20.0.0",
     "angular": "^1.8.2",
     "ckeditor5": "^30.0.0",
     "ckeditor5-build-classic": "^1.0.0",

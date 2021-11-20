@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AlumnosPage } from './alumnos.page';
+import { LoginPageModule } from '../../login/login.module';
 
 const routes: Routes = [
   {
@@ -14,7 +15,11 @@ const routes: Routes = [
       },
       {
         path: 'alumno-editar',
-        loadChildren: () => import('../alumno-editar/alumno-editar-routing.module').then(m => m.AlumnoEditarPageRoutingModule)
+        loadChildren: () => import('../alumno-editar/alumno-editar.module').then(m => m.AlumnoEditarPageModule),
+      },
+      {
+        path: 'alumno-inscribir',
+        loadChildren: () => import('../alumno-inscribir/alumno-inscribir.module').then(m => m.AlumnoInscribirPageModule)
       },
       
     ]

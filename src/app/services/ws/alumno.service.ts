@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ListaVehiculosI } from '../../models/listavehiculos.interface';
 import { VehiculoI } from 'src/app/models/vehiculo.interface';
 import { AlumnoI } from '../../models/Alumno.Interface';
+import { InscripcionI } from '../../models/Inscripcion.Interface';
 
 
 @Injectable({
@@ -23,6 +24,13 @@ constructor(private http:HttpClient){}
   let direccion = this.url + "insertar";
   console.log(direccion);
   return this.http.put<AlumnoI>(direccion, form);
+ }
+
+ //Inscripcion Alumno
+ postInscripcion(form:InscripcionI):Observable<InscripcionI>{
+  let direccion = this.url + "insertar";
+  console.log(direccion);
+  return this.http.put<InscripcionI>(direccion, form);
  }
 
  //Crud Alumno
