@@ -70,4 +70,5 @@ export class NuevoAlumnoPage implements OnInit {
 
     await alert.present();
   }
+  // https://remotestack.io/ionic-angular-datatables-with-pagination-tutorial/
 }
