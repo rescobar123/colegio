@@ -10,5 +10,7 @@ export interface AlumnoI{
     celular?: number,
     estado?:number,
     observacion?: string,
-    fechaCreacion?: string
+    fechaCreacion?: string,
+    fotografia?: string,
+    fechaNacimiento?: string,
 }  

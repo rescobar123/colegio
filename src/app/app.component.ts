@@ -46,7 +46,7 @@ export class AppComponent {
      }else if(this.idRol == 3){
       //Obtener los grados del administrativo y meterlos aca
        this.appPages =  [
-         { title: 'Alumnos', url: 'administrativo/alumnos', icon: 'people' },
+         { title: 'Alumnos', url: 'administrativo/alumno-opciones', icon: 'people' },
          { title: 'Recursos', url: 'administrativo/recursos', icon: 'layers' },
        ];
 

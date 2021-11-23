@@ -5,17 +5,20 @@ import { ListaVehiculosI } from '../../models/listavehiculos.interface';
 import { VehiculoI } from 'src/app/models/vehiculo.interface';
 import { AlumnoI } from '../../models/Alumno.Interface';
 import { InscripcionI } from '../../models/Inscripcion.Interface';
+import { Page } from '../../models/comunes/page';
+import { PagedData } from '../../models/comunes/paged-data';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlumnoService {
-
   private url:string = "http://192.168.0.8:8080/backendColegio/WS/Alumno/"; //192.168.0.8
 constructor(private http:HttpClient){}
 
- getAllAlumnos():Observable<AlumnoI[]>{
+
+
+ getAllAlumnos(opcion:number):Observable<AlumnoI[]>{
   let direccion = this.url + "listar";
   return this.http.get<AlumnoI[]>(direccion);
  }
@@ -24,6 +27,11 @@ constructor(private http:HttpClient){}
   let direccion = this.url + "insertar";
   console.log(direccion);
   return this.http.put<AlumnoI>(direccion, form);
+ }
+
+ getAlumnoById(idAlumno:String):Observable<AlumnoI>{
+  let direccion = this.url + idAlumno;
+  return this.http.get<AlumnoI>(direccion);
  }
 
  //Inscripcion Alumno

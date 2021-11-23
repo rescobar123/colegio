@@ -7,81 +7,56 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" overflow-scroll="true">
+<ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Inscripciones</ion-title>
     </ion-toolbar>
   </ion-header>
 
-
   <div id="container">
-    <ion-grid>
-      <ion-row>
-        <ion-col size="12" size-sm>
           <ion-card>
-           
             <ion-card-header>
-              <ion-card-subtitle>Alumnos</ion-card-subtitle>
-              <ion-card-title>Colegio Parroquial Nuestra Seniora del Carmen</ion-card-title>
+              <ion-card-subtitle>
+                Alumnos
+                <input placeholder="Buscar..." type="text" (keyup)='filterDatatable($event)'>
+              </ion-card-subtitle>
             </ion-card-header>
             <ion-card-content>
-              <hr class="dotted">
-              <table datatable  class="table row-border table-hover ">
-                <thead>
-                  <tr>
-                    <th scope="col"> ID</th>
-                    <th scope="col">Nombres</th>
-                    <th scope="col">Apellidos</th>
-                    <th scope="col">Codigo</th>
-                    <th scope="col">Direccion</th>
-                    <th scope="col">Celular</th>
-                    <th scope="col">Observacion</th>
-                    <th scope="col">Editar</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let alumno of allAlumnos" >
-                    <th scope="row">{{ alumno.idAlumno }}</th>
-                    <td>{{ alumno.nombres }}</td>
-                    <td>{{ alumno.apellidos }}</td>
-                    <td>{{ alumno.codigoAlumno }}</td>
-                    <td>{{ alumno.direccion }}</td>
-                    <td>{{ alumno.celular }}</td>
-                    <td>{{ alumno.observacion }}</td>
-                    <td> <ion-icon name="create"></ion-icon></td>
-                  </tr>
-                 
-                </tbody>
-              </table>
+            <ngx-datatable 
+              #table
+              class="material"
+              [limit]="10" 
+              [rows]="info" 
+              [rowHeight]="55" 
+              [scrollbarH]="true"
+              [columns]="col"
+              [width]="30"
+              [columnMode]="'force'" 
+              [headerHeight]="35" 
+              [footerHeight]="100"
+             >
+              >
+              <ngx-datatable-column *ngFor="let co of col; let i = index;" name="{{co.name}}" prop="{{co.prop}}">
+                <ng-template  let-value="value" let-row="row"  ngx-datatable-cell-template>
+                  <span *ngIf=" co.name === 'Actions'" >
+                    <ion-button title="Editar"   [routerLink]="['alumno-editar', row.idAlumno]" ><ion-icon  color="warning"  name="create-outline"></ion-icon>{{value}}</ion-button>
+                    <ion-button  title="Elimir" (click)='onSelectRed(row)'><ion-icon color="danger" size="small" name="trash-outline"></ion-icon>{{value}}</ion-button>
+                   
+                   <!--<ion-button style="background-color:blue;height:15px;" class="btn" (click)='onSelectBlue(value)'><i class="rb-ic rb-ic-add-frame"></i></ion-button>--> 
+                  </span>
+                  <span *ngIf=" co.name === 'Ver'" >
+                    <ion-button title="Ver" (click)='onSelectRed(row)'><ion-icon  color="success"  name="eye-outline"></ion-icon>{{value}}</ion-button>
+                    <ion-button  title="Inscribir" (click)='onSelectRed(row)'><ion-icon color="tertiary" size="small" name="school-outline"></ion-icon>{{value}}</ion-button>
+                   
+                   <!--<ion-button style="background-color:blue;height:15px;" class="btn" (click)='onSelectBlue(value)'><i class="rb-ic rb-ic-add-frame"></i></ion-button>--> 
+                  </span>
+                  <label>{{ value }}</label>
+                </ng-template>
+              </ngx-datatable-column>
+          </ngx-datatable>
             </ion-card-content>
           </ion-card>
-        </ion-col>
-        
-      </ion-row>
-    </ion-grid>
-
-    
 
   </div>
-
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      
-      <ion-tab-button tab="alumno-inscribir">
-        <ion-icon name="school"></ion-icon>
-        <ion-label>Inscribir</ion-label>
-      </ion-tab-button>
-      <ion-tab-button  tab="nuevo-alumno">
-        <ion-icon name="person-add"></ion-icon>
-        <ion-label>Nuevo Alumno</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="alumnos">
-        <ion-icon name="people"></ion-icon>
-        <ion-label>Alumnos</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
-  
-
 </ion-content>

@@ -5,7 +5,6 @@ import { IonicModule, AlertController } from '@ionic/angular';
 import { NuevoAlumnoPageRoutingModule } from './nuevo-alumno-routing.module';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { NuevoAlumnoPage } from './nuevo-alumno.page';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   imports: [
@@ -14,12 +13,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     IonicModule,
     ReactiveFormsModule,
     NuevoAlumnoPageRoutingModule,
-    NgxDatatableModule
   ],
   declarations: [NuevoAlumnoPage],
   providers:[AlertController],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ]
 })
 export class NuevoAlumnoPageModule {}

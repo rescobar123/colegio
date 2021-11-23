@@ -3,7 +3,6 @@ ion-menu-button {
 }
 
 #container {
-  text-align: center;
   position: absolute;
   left: 0;
   right: 0;
@@ -39,8 +38,8 @@ th, td {
 
 tr:nth-child(even) {background-color: #f2f2f2;}
 
-#headtable{
-  
-  line-height: 22px;
-  color: #bb7021;
-}
+
+
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';

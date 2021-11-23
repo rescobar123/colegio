@@ -57,6 +57,10 @@ const routes: Routes = [
     path: 'administrativo/recursos',
     loadChildren: () => import('./pages/administrativo/recursos/recursos.module').then( m => m.RecursosPageModule)
   },
+  {
+    path: 'administrativo/alumno-opciones',
+    loadChildren: () => import('./pages/administrativo/alumno-opciones/alumno-opciones.module').then( m => m.AlumnoOpcionesPageModule)
+  },
 
 ];
 

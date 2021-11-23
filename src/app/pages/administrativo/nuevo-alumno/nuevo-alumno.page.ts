@@ -5,14 +5,11 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CentroEducativoI } from '../../../models/CentroEducativo.Interface';
 import { AlertController } from '@ionic/angular';
-import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-nuevo-alumno',
   templateUrl: './nuevo-alumno.page.html',
   styleUrls: ['./nuevo-alumno.page.scss'],
-  encapsulation: ViewEncapsulation.None
-
 })
 export class NuevoAlumnoPage implements OnInit {
   nuevoForm = new FormGroup({
@@ -29,7 +26,13 @@ export class NuevoAlumnoPage implements OnInit {
     observacion:  new FormControl(''),
 });
 
-  constructor(private ws:AlumnoService, private route:Router, public alertController: AlertController) { }
+  public Users: AlumnoI;
+  public col: any;
+  public rows: any;
+
+  constructor(private ws:AlumnoService, private route:Router, public alertController: AlertController) { 
+
+  }
 
   ngOnInit() {
   }
