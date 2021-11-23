@@ -1,7 +1,8 @@
 {
   "name": "colegio",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular",
   "id": "526b6e2a"

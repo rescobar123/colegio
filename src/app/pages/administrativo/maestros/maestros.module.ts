@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-
 import { MaestrosPageRoutingModule } from './maestros-routing.module';
-
 import { MaestrosPage } from './maestros.page';
 
 @NgModule({
@@ -13,7 +10,8 @@ import { MaestrosPage } from './maestros.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    MaestrosPageRoutingModule
+    MaestrosPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [MaestrosPage]
 })

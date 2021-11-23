@@ -1,10 +1,11 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlumnoI } from '../../../models/Alumno.Interface';
 import { AlumnoService } from '../../../services/ws/alumno.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CentroEducativoI } from '../../../models/CentroEducativo.Interface';
 import { AlertController } from '@ionic/angular';
+import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 
 @Component({
   selector: 'app-nuevo-alumno',
@@ -30,11 +31,17 @@ export class NuevoAlumnoPage implements OnInit {
   public col: any;
   public rows: any;
 
-  constructor(private ws:AlumnoService, private route:Router, public alertController: AlertController) { 
+  constructor(private ws:AlumnoService, private route:Router, public alertController: AlertController, private photoViewer: PhotoViewer) { 
 
   }
 
   ngOnInit() {
+
+this.photoViewer.show('https://w7.pngwing.com/pngs/926/289/png-transparent-leeds-college-of-building-university-school-building-building-logo-university-thumbnail.png');
+
+this.photoViewer.show('https://w7.pngwing.com/pngs/926/289/png-transparent-leeds-college-of-building-university-school-building-building-logo-university-thumbnail.png', 'My image title', {share: false});
+
+this.photoViewer.show('https://w7.pngwing.com/pngs/926/289/png-transparent-leeds-college-of-building-university-school-building-building-logo-university-thumbnail.png', 'My image title', {share: false, headers: '{username:foo,password:bar}'});
   }
   postForm(form:AlumnoI){
     //aca deberia traer el id del centro educativo
