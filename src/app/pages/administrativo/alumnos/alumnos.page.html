@@ -8,21 +8,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Inscripciones</ion-title>
+      <ion-title>Alumnos <input placeholder="Buscar..." type="text" (keyup)='filterDatatable($event)'></ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-          <ion-card>
-            <ion-card-header>
-              <ion-card-subtitle>
-                Alumnos
-                <input placeholder="Buscar..." type="text" (keyup)='filterDatatable($event)'>
-              </ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
+    <ion-card-content>
             <ngx-datatable 
               #table
               class="material"
@@ -36,7 +27,6 @@
               [headerHeight]="35" 
               [footerHeight]="100"
              >
-              >
               <ngx-datatable-column *ngFor="let co of col; let i = index;" name="{{co.name}}" prop="{{co.prop}}">
                 <ng-template  let-value="value" let-row="row"  ngx-datatable-cell-template>
                   <span *ngIf=" co.name === 'Actions'" >
@@ -51,12 +41,10 @@
                    
                    <!--<ion-button style="background-color:blue;height:15px;" class="btn" (click)='onSelectBlue(value)'><i class="rb-ic rb-ic-add-frame"></i></ion-button>--> 
                   </span>
-                  <label>{{ value }}</label>
+                  <label >{{ value }}</label>
                 </ng-template>
               </ngx-datatable-column>
           </ngx-datatable>
             </ion-card-content>
-          </ion-card>
 
-  </div>
 </ion-content>

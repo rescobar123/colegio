@@ -67,15 +67,21 @@
                       <ion-icon lazy="true" slot="start" name="attach"></ion-icon>
                       <ion-label slot="end">Adjuntar fotografia...</ion-label>
                     </ion-button>
-                      <input class="ion-hide" #f type="file" name="fotografia" class="form-control" formControlName="fotografia"
-                        accept="image/png, image/jpeg">
-        
+                      <input (change)="fileChange($event)" class="ion-hide" #f type="file" accept="image/png, image/jpeg">
+                      
                  </ion-item>
                 </ion-col>
                 
               </ion-row>
+              <ion-row>
+                <ion-col>
+                  <img width="40%" *ngIf="img1" [src]="img1"/>
+                  <br>
+                  <input *ngIf="img1" name="fotografia" class="form-control" formControlName="fotografia" type="hidden" >
+                </ion-col>
+              </ion-row>
             </ion-grid>
-            <ion-button type="submit">Guardar</ion-button><br>
+            <ion-button type="submit">Guardar</ion-button><br><br><br>
           </form>
         </ion-card-content>
         

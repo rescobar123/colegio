@@ -1,0 +1,30 @@
+<ion-card>
+    <ion-card-content>
+      <ion-card-header>
+        <ion-card-title> Maestros <input placeholder="Buscar..." type="text" (keyup)='filterDatatable($event)'></ion-card-title>
+        <ion-icon   name="people"></ion-icon>
+      </ion-card-header>
+      <ngx-datatable 
+      #table
+      [limit]="5" 
+      [rows]="info" 
+      [rowHeight]="55" 
+      [scrollbarH]="true"
+      [columns]="col"
+      [width]="30"
+      [columnMode]="'force'" 
+      [headerHeight]="35" 
+      [footerHeight]="100"
+     >
+      <ngx-datatable-column color="success" *ngFor="let co of col; let i = index;" name="{{co.name}}" prop="{{co.prop}}">
+        <ng-template  let-value="value" let-row="row"  ngx-datatable-cell-template>
+          <span *ngIf=" co.name === 'Actions'" >
+            <ion-button title="Editar"   [routerLink]="['alumno-editar', row.idAlumno]" ><ion-icon  color="warning"  name="create-outline"></ion-icon>{{value}}</ion-button>
+            <ion-button  title="Elimir"><ion-icon color="danger" size="small" name="trash-outline"></ion-icon>{{value}}</ion-button>
+          </span>
+          <label >{{ value }}</label>
+        </ng-template>
+      </ngx-datatable-column>
+  </ngx-datatable>
+    </ion-card-content>
+  </ion-card>

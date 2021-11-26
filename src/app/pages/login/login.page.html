@@ -7,17 +7,17 @@
 <ion-content>
   <div id="container">
     <ion-card>
-    <form >
+    <form  [formGroup]=nuevoForm (ngSubmit)="postForm(nuevoForm.value)">
       <img style="width: 15%;"  src="https://w7.pngwing.com/pngs/373/290/png-transparent-logo-lion-o-thundercats-animated-series-logos-miscellaneous-comics-logo-thumbnail.png">
       <br><br>
       <ion-item lines="full">
         <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text" required></ion-input>
+        <ion-input required=""type="text" name="nick"  formControlName="nick"></ion-input>
       </ion-item>
   
       <ion-item lines="full">
         <ion-label position="floating">Contrasenia</ion-label>
-        <ion-input type="password" required></ion-input>
+        <ion-input required="" type="password" name="password" formControlName="password"></ion-input>
       </ion-item>
       <br><br>
       <ion-row>

@@ -5,11 +5,10 @@
 </ion-header>
 
   <ion-content [fullscreen]="true">
-    <div id="container">
       <ion-card>
         <ion-card-header>
-          <ion-icon size="large" name="person-add"></ion-icon>
-          <ion-card-title>Maestros</ion-card-title>
+          <ion-icon  size="large" name="person-add"></ion-icon>
+          <ion-card-title> Maestro </ion-card-title>
         </ion-card-header>
   
         <ion-card-content>
@@ -19,7 +18,7 @@
                 <ion-col size="12" size-md>
                   <ion-item>
                     <ion-label position="stacked">Nombre Completo</ion-label>
-                    <ion-input type="text" name="nombre" class="form-control" formControlName="nombre" ></ion-input>
+                    <ion-input type="text" name="nombreCompleto" class="form-control" formControlName="nombreCompleto" ></ion-input>
                   </ion-item>
                 </ion-col>
                 <ion-col size="12" size-md>
@@ -33,8 +32,8 @@
               <ion-row>
                 <ion-col size="12" size-md>
                   <ion-item>
-                    <ion-label position="stacked">Celular</ion-label>
-                    <ion-input type="number" name="celular" class="form-control" formControlName="celular" ></ion-input>
+                    <ion-label position="stacked">Telefono</ion-label>
+                    <ion-input type="number" name="telefono" class="form-control" formControlName="telefono" ></ion-input>
                   </ion-item>
                 </ion-col>
                 <ion-col size="12" size-md>
@@ -49,5 +48,5 @@
           </form>
         </ion-card-content>
       </ion-card>
-    </div>
+      <app-todos></app-todos>
   </ion-content>

@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { MaestrosPage } from './pages/administrativo/maestros/maestros.page';
+import { MaestrosPageModule } from './pages/administrativo/maestros/maestros.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     HttpClientModule,
     NgxDatatableModule,
     IonicModule.forRoot(), 
-    AppRoutingModule
+    AppRoutingModule,
+    MaestrosPageModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AlertController],
   bootstrap: [AppComponent],

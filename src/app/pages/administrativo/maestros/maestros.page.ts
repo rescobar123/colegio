@@ -1,44 +1,62 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { AlumnoService } from '../../../services/ws/alumno.service';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { AlumnoI } from '../../../models/Alumno.Interface';
+import { RecursoService } from '../../../services/ws/recursos.service';
+import { DocenteI } from '../../../models/Docente.Interface';
+import { __importStar } from 'tslib';
+import { CentroEducativoI } from '../../../models/CentroEducativo.Interface';
+import { AlertI } from '../../../models/comunes/AlertI';
 
 @Component({
   selector: 'app-maestros',
   templateUrl: './maestros.page.html',
   styleUrls: ['./maestros.page.scss'],
 })
+
 export class MaestrosPage implements OnInit {
+
   nuevoForm = new FormGroup({
-    apellidos:  new FormControl(''),
-    celular:  new FormControl(''),
-    centroEducativo: new FormControl(''),
-    codigoAlumno:  new FormControl(''),
+    centroEducativo:  new FormControl(''),
+    nombreCompleto: new FormControl(''),
     direccion:  new FormControl(''),
-    estado: new FormControl(''),
-    fechaCreacion: new FormControl(''),
-    fechaNacimiento:  new FormControl(''),
-    fotografia:  new FormControl(''),
-    nombres:  new FormControl(''),
-    observacion:  new FormControl(''),
+    telefono:  new FormControl(''),
+    escolaridad:  new FormControl(''),
 });
 
-
-  constructor(private ws:AlumnoService, private route:Router, public alertController: AlertController) { }
+  constructor(public alertController: AlertController, private ws:RecursoService) { }
 
   ngOnInit() {
+
   }
-  postForm(form:AlumnoI){
-    //hasta aca   
-    form.estado = 1;
-    form.fechaCreacion = "2021-11-26";
+  postForm(form:DocenteI){
+    //aca deberia traer el id del centro educativo
+    let centroEducativo:CentroEducativoI = {
+      "idCentroEducativo": 1
+    };
+    console.log("Aca va");
+    form.centroEducativo =  centroEducativo;
+    this.ws.postDocente(form).subscribe( data => {
+      let alerta:AlertI = data;
+      if(alerta.tipo == "success"){
+        this.presentAlertMultipleButtons(alerta.tipo, alerta.mensaje);
+        console.log("Exito");
+        this.nuevoForm.reset();
+      }else{
+        this.presentAlertMultipleButtons(alerta.tipo, alerta.mensaje);
+      }
+    });
 
     console.log(form);
-    this.ws.postAlumno(form).subscribe( data => {
-
-    });
    
+  }
+
+  async presentAlertMultipleButtons(titulo:string, mensaje:string) {
+    const alert = await this.alertController.create({
+      header: titulo,
+      message: mensaje,
+      buttons: ['Aceptar']
+    });
+    await alert.present();
   }
 }

@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { CentroEducativoI } from '../../../models/CentroEducativo.Interface';
 import { AlertController } from '@ionic/angular';
+import { AlertI } from '../../../models/comunes/AlertI';
 
 @Component({
   selector: 'app-alumno-editar',
@@ -65,26 +66,25 @@ export class AlumnoEditarPage implements OnInit {
 
     console.log(form);
     this.ws.postAlumno(form).subscribe( data => {
-      let alumno:AlumnoI = data;
-      if(alumno.observacion == "Asociado"){
-        this.presentAlertMultipleButtons();
-        console.log("Exito");
+      let alerta:AlertI = data;
+      if(alerta.tipo == "success"){
+        this.presentAlertMultipleButtons(alerta.tipo, alerta.mensaje, alerta.error);
+        //Falta agregar la alerta
         this.nuevoForm.reset();
       }else{
-        console.log(alumno);
-     //  this.alerta.showError("Error", alumno.observacion);
+        console.log(alerta);
+        this.presentAlertMultipleButtons(alerta.tipo, alerta.mensaje, alerta.error);
       }
     });
    
   }
 
-  async presentAlertMultipleButtons() {
+  async presentAlertMultipleButtons(titulo:string, mensaje:string, error:string) {
     const alert = await this.alertController.create({
-      header: 'Alumno Creado',
-      message: 'Por Favor inscribe el alumno',
+      header: titulo,
+      message: mensaje,
       buttons: ['Aceptar']
     });
-
     await alert.present();
   }
 
