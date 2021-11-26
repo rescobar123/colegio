@@ -2,11 +2,24 @@ ion-menu-button {
     color: var(--ion-color-primary);
   }
   
-  #container {
-    text-align: center;
-    position: absolute;
-    left: 0;
-    right: 0;
+
+  /* For mobile phones: */
+  @media only screen and (max-width: 768px) {
+    #container {
+      text-align: center;
+      position: absolute;
+      top:20%;
+      left:0%;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    #container {
+      text-align: center;
+      position: absolute;
+      top:20%;
+      left:35%;
+    }
   }
   
   #container strong {

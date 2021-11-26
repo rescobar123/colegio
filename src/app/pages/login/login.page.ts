@@ -12,6 +12,7 @@ import { CentroEducativoI } from '../../models/CentroEducativo.Interface';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  public logueado:number;
 
   nuevoForm = new FormGroup({
     nick:  new FormControl(''),
@@ -33,14 +34,23 @@ export class LoginPage implements OnInit {
   postForm(form:UsuarioI){
     this.ws.postLogin(form).subscribe( data => {
       let alerta:AlertI = data;
+      if(form.nick == null){
+        this.presentAlertMultipleButtons("Error", "No se ingreso el usuario es requerido", "");
+        return;
+      }if(form.password == null){
+        this.presentAlertMultipleButtons("Error", "No se ingreso el password es requerido", "");
+        return;
+      }
+
       if(alerta.tipo == "success"){
         this.presentAlertMultipleButtons(alerta.tipo, alerta.mensaje, "");
-        
+        this.logueado = 1;
         this.nuevoForm.reset();
         //Almacenar datos en local storage
-        localStorage.setItem('token', alerta.jwt.jwt);
+        localStorage.setItem('token', alerta.jwt.jwt); 
         //hasta aca para almacenar datos
       }else{
+        this.logueado = 0;
         this.presentAlertMultipleButtons(alerta.tipo, alerta.mensaje, alerta.error);
       }
 
